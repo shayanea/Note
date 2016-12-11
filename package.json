@@ -1,0 +1,22 @@
+{
+  "name": "note",
+  "version": "0.0.1",
+  "description": "application for taking quick note",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shayanea/Note.git"
+  },
+  "keywords": [
+    "note"
+  ],
+  "author": "Shayan Araghi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shayanea/Note/issues"
+  },
+  "homepage": "https://github.com/shayanea/Note#readme"
+}
