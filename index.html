@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+    <html class="no-js" lang="fa" ng-app="Note">
+    <head>
+        <title>Note</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="author" content="name">
+        <meta name="description" content="description here">
+
+        <!-- Custom Style -->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/skeleton.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+    </head>
+    <body>
+        <div class="row">
+            <div class="sidebar three columns">
+                <div ui-view></div>
+            </div>
+            <div ng-controller="NoteController" class="right_holder">
+                <span class="restore" ng-click="Restore(Note._id)" ng-show="Note.deleted">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="fill: rgb(85, 85, 85);" xml:space="preserve">
+                        <g style="fill: rgb(85, 85, 85);">
+                            <g style="fill: rgb(85, 85, 85);">
+                                <path d="M384.834,180.699c-0.698,0-348.733,0-348.733,0l73.326-82.187c4.755-5.33,4.289-13.505-1.041-18.26    c-5.328-4.754-13.505-4.29-18.26,1.041l-82.582,92.56c-10.059,11.278-10.058,28.282,0.001,39.557l82.582,92.561    c2.556,2.865,6.097,4.323,9.654,4.323c3.064,0,6.139-1.083,8.606-3.282c5.33-4.755,5.795-12.93,1.041-18.26l-73.326-82.188    c0,0,348.034,0,348.733,0c55.858,0,101.3,45.444,101.3,101.3s-45.443,101.3-101.3,101.3h-61.58    c-7.143,0-12.933,5.791-12.933,12.933c0,7.142,5.79,12.933,12.933,12.933h61.58c70.12,0,127.166-57.046,127.166-127.166    C512,237.745,454.954,180.699,384.834,180.699z" style="fill: rgb(85, 85, 85);"></path>
+                            </g>
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                        <g style="fill: rgb(85, 85, 85);">
+                        </g>
+                    </svg>
+                </span>
+                <textarea class="text_holder" ng-model="Note.body" spellcheck="false" placeholder="Create New Note">
+                </textarea>
+                <a href="" class="float_btn" ng-click="AddNote(Note)">
+                    <svg ng-if="ShowMark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 406.834 406.834" style="fill: rgb(68, 68, 68);" xml:space="preserve">
+                        <polygon points="385.621,62.507 146.225,301.901 21.213,176.891 0,198.104 146.225,344.327 406.834,83.72 " style="fill: rgb(68, 68, 68);"></polygon>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                        <g style="fill: rgb(68, 68, 68);">
+                        </g>
+                    </svg>
+                    <svg ng-if="!ShowMark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 31.444 31.444" style="fill: rgb(34, 34, 34);" xml:space="preserve">
+                        <path style="fill: rgb(34, 34, 34);" d="M1.119,16.841c-0.619,0-1.111-0.508-1.111-1.127c0-0.619,0.492-1.111,1.111-1.111h13.475V1.127  C14.595,0.508,15.103,0,15.722,0c0.619,0,1.111,0.508,1.111,1.127v13.476h13.475c0.619,0,1.127,0.492,1.127,1.111  c0,0.619-0.508,1.127-1.127,1.127H16.833v13.476c0,0.619-0.492,1.127-1.111,1.127c-0.619,0-1.127-0.508-1.127-1.127V16.841H1.119z"></path>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                        <g style="fill: rgb(34, 34, 34);">
+                        </g>
+                    </svg>
+                </a>
+                <div class="tag_holder">
+                    <div class="tags" ng-repeat="item in Tags track by $index">
+                        <span class="remove_tag" ng-click="RemoveTag(item)">
+                            &times;
+                        </span>
+                        {{item.title}}
+                    </div>
+                    <input class="tag_text" type="text" ng-model="tag" ng-keyup="AddTag($event.keyCode,tag)" placeholder="Add a tag" />
+                </div>
+            </div>            
+        </div>
+
+        <!-- General Js Files -->
+        <script type="text/javascript" src="js/Lib/pouchdb.min.js"></script>
+        <script type="text/javascript" src="js/Lib/jquery.min.js"></script>
+        <!--<script>window.$ = window.jQuery = require('./js/Lib/jquery.min.js');</script>-->
+        <script type="text/javascript" src="js/Lib/angular.min.js"></script>
+        <script type="text/javascript" src="js/Lib/angular-ui-router.min.js"></script>
+        <script type="text/javascript" src="js/Lib/ngStorage.min.js"></script>
+
+        <!-- Core Js -->
+        <script type="text/javascript" src="js/Angular/app.js"></script>
+
+        <!-- Angularjs Services -->
+        <script type="text/javascript" src="js/Angular/Service/DatabaseService.js"></script>
+        <script type="text/javascript" src="js/Angular/Service/TagService.js"></script>  
+        <script type="text/javascript" src="js/Angular/Service/NoteService.js"></script> 
+
+        <!-- Angularjs Controllers -->
+        <script type="text/javascript" src="js/Angular/Controller/MainController.js"></script>
+
+    </body>
+</html>

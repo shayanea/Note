@@ -1,0 +1,212 @@
+html,body{
+    background-color: #fff;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.right_holder{
+    position: absolute;
+    right: 0px;
+    left: 22%;
+    top: 0px;
+    bottom: 0px;
+}
+.sidebar{
+    background-color:#F3F3F3;
+    padding: 20px 30px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    min-height: 100vh;
+}
+.sidebar h2{
+    font-size: 1.7em;
+    color: #222;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.sidebar h2 svg{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.sidebar ul{
+    list-style: none;
+    display: block;
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+    left: 0px;
+    right: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.sidebar ul li{
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+.sidebar ul li a{
+    color: #777;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none!important;
+    transition: all .3s;
+}
+.sidebar ul li:hover a{
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;`
+}
+.sidebar ul li a.active{
+    color: #34F0B9;
+}
+.sidebar ul li:hover .active{
+    font-size: 16px;
+    font-weight: 100;
+}
+.sidebar ul li span {
+    position: absolute;
+    left: -25px;
+    top: 2px;
+    cursor: pointer;
+    transition: left .2s;
+}
+.sidebar ul li:hover span{
+    left: 5px;
+}
+.sidebar ul li span svg{
+    width: 20px;
+    height: 20px;
+}
+.empty{
+    padding-left: 30px;
+    font-size: 13px;
+    color: #555;
+}
+.toolbar_bottom{
+    position: absolute;
+    left: 30px;
+    bottom: 5%;
+    right: 0px;
+}
+.toolbar_bottom button{
+    font-size: 14px;
+    background-color: transparent;
+    border:0px;
+    outline: none;
+    box-shadow: none;
+    color: #999;
+    display: block;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+.toolbar_bottom button:hover{
+    color: #777;
+}
+.text_holder{
+    padding: 40px;
+    color: #666;
+    font-size: 16px;
+    outline: none;
+    border:0px!important;
+    resize: none;
+    width: 100%;
+    position: relative;
+    margin-bottom: 0px;
+    height: 95%;
+}
+.text_holder::first-line{
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #444;
+    font-weight: bold;
+}
+::-webkit-input-placeholder {
+    color:#999;
+}
+:-moz-placeholder {
+   color:#999;
+   opacity:  1;
+}
+::-moz-placeholder {
+   color:#999;
+   opacity:  1;
+}
+:-ms-input-placeholder {
+   color:#999;
+}
+.float_btn{
+    position: fixed;
+    right: 30px;
+    bottom: 60px;
+    width: 40px;
+    height: 40px;
+    background-color: #34F0B9;
+    text-align: center;
+    border-radius: 100%;
+    box-shadow: 0px 1px 12px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 1px 12px rgba(0,0,0,0.2);
+}
+.float_btn svg{
+    width: 20px;
+    margin-top: 10px;
+}
+.restore{
+    position: fixed;
+    right: 30px;
+    top: 15px;
+    z-index: 999;
+    cursor: pointer;
+}
+.restore svg{
+    width: 20px;
+    height: 20px;
+}
+@media(max-width:990px){
+    .sidebar{
+        width: 28%!important;
+    }
+    .right_holder{
+        left: 28%;
+    }
+}
+.tag_holder{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 50px;
+    border-top: 1px solid #eee;
+    padding-left: 30px;
+}
+.tag_holder .tag_text{
+    border:0px;
+    outline: none!important;
+    height: 100%;
+    width: auto;
+    padding: 0px;
+    text-align: left;
+    color: #666;
+    font-size: 13px;
+    box-shadow: none;
+}
+.tag_holder .tag_text:active,
+.tag_holder .tag_text:focus{
+    border: none!important;
+}
+.tags{
+    float: left;
+    background-color: #f3f3f3;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin-right: 10px;
+    margin-top: 14px;
+}

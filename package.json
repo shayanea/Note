@@ -4,8 +4,11 @@
   "description": "application for taking quick note",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-packager . Note --platform=darwin --arch=x64 --version=1.4.11 --out=. --overwrite --icon=./images/note.icns",
+    "installation": "electron-installer-dmg ./Note-darwin-x64/Note.app Note --out=. --overwrite --icon=./images/note.icns"
   },
+  "productName": "Note",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shayanea/Note.git"
@@ -18,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/shayanea/Note/issues"
   },
-  "homepage": "https://github.com/shayanea/Note#readme"
+  "homepage": "https://github.com/shayanea/Note#readme",
+  "dependencies": {
+    "pouchdb": "^6.1.0"
+  },
+  "devDependencies": {
+    "electron-installer-dmg": "^0.1.2",
+    "electron-packager": "^8.4.0"
+  }
 }
